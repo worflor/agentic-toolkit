@@ -1,72 +1,90 @@
-# Agentic Project System
+# Agentic Toolkit
 
-A lightweight, two-document system for repository information architecture and ongoing project maintenance:
+**Reusable, opinionated methods for agents working with real projects.**
 
-- **[Agentic Project Startup](./Agentic%20Project%20Startup.md)** — *“Give knowledge good places to live.”* Defines the repository’s information architecture: predictable landmarks, clear responsibilities for each class of document, and how to turn an uncoordinated codebase into something legible to humans and autonomous agents alike.
-- **[Project Shaping](./Project%20Shaping.md)** — *“Help the knowledge and the places keep matching the project as it evolves.”* Defines the maintenance and intelligence process: how to understand what a project has become, reconcile accumulated sediment, preserve taste, and surface emerging structure without flattening identity.
+This is a small collection of independent [Agent Skills](https://agentskills.io/specification) for helping an agent understand a repository, give its knowledge good places to live, keep its representation honest as it evolves, and criticize what it actually feels like to use.
 
-Together, they establish a structure where predictability lives at the center and emergence thrives around it.
+Not an orchestration platform, daemon, monitoring service, or mega-prompt. Each skill has a distinct job. Use one when it earns its place.
 
----
+## Skills
 
-## The Division of Responsibilities
+| Skill | Reach for it when… | What it does |
+| --- | --- | --- |
+| **[Superfan](skills/superfan/SKILL.md)** | You want an obsessively detailed, opinionated reading of a repository, feature, gameplay loop, user fantasy, design arc, or conceptual inconsistency. | Reconstructs the project's identity and history, traces interactions, and develops evidence-grounded taste. **Analysis-only by default.** |
+| **[Project Startup](skills/project-startup/SKILL.md)** | You're starting, adopting, or reorganizing a project, and workers need to find trustworthy context without guesswork. | Establishes predictable information architecture and appropriately scoped canonical documents without templating away the project's identity. |
+| **[Project Shaping](skills/project-shaping/SKILL.md)** | A project has learned things through development and its docs, conventions, assumptions, or structure need to catch up. | Reconciles intended direction, implementation reality, living context, archaeology, and residue while preserving project taste. |
 
-```text
-┌────────────────────────────────────────────────────────┐
-│               AGENTIC PROJECT SYSTEM                  │
-├───────────────────────────┬────────────────────────────┤
-│  Agentic Project Startup  │      Project Shaping       │
-│                           │                            │
-│  • Information architecture│  • Maintenance process     │
-│  • Predictable landmarks  │  • Reconciling sediment    │
-│  • Core document roles    │  • Discovering latent taste│
-│  • Working memory / briefs│  • Emerging structure      │
-│  • Orienting new workers  │  • Keeping context current │
-└───────────────────────────┴────────────────────────────┘
+**These are not phases of a mandatory pipeline.** Superfan can critique something without reorganizing it. Shaping can repair documentation without performing a superfan review. Startup can organize a mature codebase without redesigning it.
+
+## Install
+
+Use the [skills CLI](https://github.com/vercel-labs/skills) to install an individual skill:
+
+```bash
+npx skills add worflor/agentic-toolkit --skill superfan
 ```
 
-### 1. Startup: Information Architecture
+Or install the whole collection:
 
-Startup sets the landmarks:
-- **`README.md`** — The public front door.
-- **`AGENTS.md`** — The worker onboarding layer that orients, routes, and defines operational boundaries.
-- **`docs/`** — Durable internal knowledge:
-  - Technical Design (`TDD.md` or equivalent)
-  - Experience / Domain Design (`GDD.md`, `PDD.md`, or equivalent)
-  - Current-State Board (`STATUS.md` or equivalent — the wooden tavern board)
-  - Working Memory (`docs/briefs/` — bounded investigations, implementation plans, artifacts)
-  - Supporting Lookup (`docs/reference/` — durable reference material)
-  - Project-specific semantic spaces (`media/`, `captures/`, `benchmarks/`, etc.)
+```bash
+npx skills add worflor/agentic-toolkit --all
+```
 
-### 2. Shaping: Ongoing Intelligence & Maintenance
+To make Superfan available globally to Claude Code, for example:
 
-Shaping ensures the repository evolves cleanly alongside real-world implementation:
-- **Read the repository as evidence:** Distinguish current implementation reality from intended direction, working context, archaeology, and residue.
-- **Trajectory cleanup:** Catch documentation up with what fast development has discovered.
-- **Preserve taste:** Keep opinionated, domain-specific taste beside the systems it governs.
-- **Let knowledge earn permanence:** Move findings from one-off briefs into durable design, references, or mechanical checks (tests, types, lint rules).
+```bash
+npx skills add worflor/agentic-toolkit --skill superfan -g -a claude-code -y
+```
 
----
+**Repository access:** This repository is currently private. The installer requires authentication with an account that can read it. The skills CLI supports existing Git credentials, authenticated GitHub CLI, and SSH. Alternatively, clone the repo using your normal Git authentication and run `npx skills add . --skill superfan` from the checkout. Installation does not require making this repository public.
 
-## Documents in this Repository
+You can also use these skills without the installer: copy the complete desired `skills/<name>/` directory into a location your agent recognizes (for example `.claude/skills/` or `.agents/skills/`). **Copy the directory, not just `SKILL.md`,** for Startup and Shaping: their full reference documents are part of the skill.
 
-| Document | Role | Core Question |
-| :--- | :--- | :--- |
-| **[`Agentic Project Startup.md`](./Agentic%20Project%20Startup.md)** | Information Architecture & Landmarks | *“Where does this kind of knowledge belong?”* |
-| **[`Project Shaping.md`](./Project%20Shaping.md)** | Maintenance & Intelligence Process | *“What has the project become, and what now represents it?”* |
+## Invoke
 
-## Practical Usage & Progressive Disclosure
+Tell a compatible coding agent what to examine and which skill to use. For example:
 
-Do not inject both framework documents into every coding agent session. Maintain **progressive disclosure**:
+> Use **superfan** on this repo. Trace the core experience, the intended fantasy, and the actual implementation. Go looking for tiny pieces of awkwardness and deeper cohesion problems. Read-only.
 
-- **Startup:** Give to an agent when initializing a repository, adopting an existing project into your style, or executing a major structural organization pass.
-- **Shaping:** Invoke periodically or when a repository has accumulated enough velocity sediment that its representation no longer matches what it has become.
-- **`AGENTS.md` + actual project docs:** Serve as the lightweight, everyday context generated by those processes. Everyday work navigates through the repository's own landmarks rather than bearing the overhead of the meta-framework.
+> Use **superfan** on the Fate system. Trace only the other systems that meaningfully shape its user-facing experience. Distinguish implemented behavior from design intentions.
 
----
+> Use **project-startup** to give this existing repo a sensible knowledge structure while preserving its conventions and personality.
 
-## Philosophy
+> Use **project-shaping** to reconcile the project's design documents, status, implementation, history, and emerging direction. Do not touch the code.
 
-> **Predictability at the center, emergence around it.**
+The user sets the scope and whether changes are authorized. A skill isn't permission to silently edit a repository.
 
-The foundational structure should be consistent enough that any competent human or autonomous worker entering the project can predict where critical context lives, while leaving enough room for the project’s specific domain, taste, and natural evolution.
+## Why these three belong together
+
+A project needs its own identity and an understandable representation of that identity:
+
+- **Startup** asks: *Where should important knowledge live?*
+- **Shaping** asks: *Does the knowledge still match what the project has become?*
+- **Superfan** asks: *What kind of experience or system does all this actually add up to, and where does it feel wrong or unusually right?*
+
+The organizing principle is **predictability at the center; emergence around it**. Give workers solid landmarks while letting each project remain recognizably itself.
+
+## Repository layout
+
+```text
+skills/
+  superfan/
+    SKILL.md                  # Complete, standalone critic
+  project-startup/
+    SKILL.md                  # Skill entry point
+    references/method.md      # Complete, canonical Startup methodology
+  project-shaping/
+    SKILL.md                  # Skill entry point
+    references/method.md      # Complete, canonical Shaping methodology
+AGENTS.md                     # Contributor/agent orientation
+Agentic Project Startup.md    # Compatibility pointer to Startup
+Project Shaping.md            # Compatibility pointer to Shaping
+```
+
+The original Startup and Shaping text has been preserved in the reference files rather than abbreviated or regenerated. Each skill is independently installable. The former root documents are now links to their canonical locations.
+
+## Contributing and evolution
+
+Add a skill when it describes a **distinct, reusable practice** with a clear invocation boundary; do not add a separate prompt for every project preference or make this a warehouse of unrelated roleplay. Keep project-specific truths in their own repositories.
+
+Prefer small `SKILL.md` entry points with deeper resources loaded only when relevant. Don't maintain parallel, diverging copies of canonical material. See [AGENTS.md](AGENTS.md) for repository-editing guidance.
