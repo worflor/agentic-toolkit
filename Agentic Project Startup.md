@@ -1,8 +1,8 @@
 # Agentic Project Startup
 
-This document has moved into the portable **Project Startup** skill.
+The canonical **Agentic Project Startup** methodology is part of the [Project Startup skill](skills/project-startup/SKILL.md).
 
-- [Complete, canonical Startup methodology](skills/project-startup/references/method.md)
-- [Installable skill entry point](skills/project-startup/SKILL.md)
+- [Read the complete method](skills/project-startup/references/method.md)
+- [Use the skill](skills/project-startup/SKILL.md)
 
-The full original document was preserved verbatim at the new location. This file stays at its former path so existing links still lead readers to the method.
+This path remains available for existing links and references.
