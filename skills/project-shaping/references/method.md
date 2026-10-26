@@ -74,36 +74,21 @@ The same philosophy applies throughout a project's life, but the emphasis change
 
 ## Early Projects
 
-When little implementation exists, shaping is primarily about **discovering latent shape**.
+When little implementation exists, shaping helps make **existing decisions and open questions** legible. Sparse evidence is not permission to devise the project's creative direction.
 
-Work with the user to understand:
+Recover from the available brief, conversation, experiments, or decisions:
 
-- what the project is
-- why it should exist
-- what experience it should create
-- major conceptual systems
-- technical direction
-- constraints
-- unusual quality priorities
-- non-goals
-- unknowns
-- project taste
-- what could be technically correct while still feeling wrong for this project
+- what the owner has actually said the project is for
+- established constraints, non-goals, and quality priorities
+- provisional ideas that should not yet be recorded as requirements
+- technical and domain choices already made
+- questions that genuinely require the owner's intent
 
-Do not reduce this to feature collection.
+Distinguish an example from a rule, a preference from a constraint, an observed pattern from an approved convention, and a hypothesis from a decision.
 
-Examples often reveal principles.
+If the project has not decided something, preserve the uncertainty. Ask a focused question when a decision is necessary to proceed; do not resolve it by assigning your own taste to the project.
 
-Follow them.
-
-Distinguish:
-
-- an example from a rule
-- a preference from a constraint
-- a current idea from project identity
-- genuine uncertainty from a decision that simply has not been made yet
-
-The aim is to capture enough of the user's model that future workers can make coherent decisions in situations nobody explicitly specified.
+Shaping records and reconciles the project's direction. It does not audition a new vision on the owner's behalf.
 
 ---
 
@@ -123,7 +108,7 @@ Look for:
 - terminology that no longer describes the implementation well
 - workflows that became normal without being documented
 - briefs whose conclusions quietly became reality
-- project taste visible in repeated choices
+- previously established design constraints reflected in repeated choices
 - assumptions that are still written down but no longer obviously true
 
 Fast development naturally creates sediment.
@@ -323,31 +308,23 @@ The question is whether the project has learned something durable enough to make
 
 ---
 
-# Preserve Project Taste
+# Preserve Established Project Taste
 
-Project taste should normally live beside the domain it influences.
+The project's taste is its established intent, constraints, and characteristic choices—not the shaper's preferences. Protect it, including purposeful irregularities that a generic cleanup might erase.
 
-For example:
+Keep those decisions beside the domain they govern:
 
-- technical taste → TDD or technical-design equivalent
-- product and UX taste → PDD or product-design equivalent
-- game/player taste → GDD or game-design equivalent
-- research taste → research-design document
-- agent behavior taste → agent-design document
+- technical intent → TDD or technical-design equivalent
+- product and UX intent → PDD or product-design equivalent
+- game/player intent → GDD or game-design equivalent
+- research intent → research-design document
+- agent behavior intent → agent-design document
 
-A good design document explains enough reasoning that future workers can understand not only:
+A good design document preserves not only *what* was chosen but the relevant *why*, so future workers can distinguish a deliberate constraint from an accident.
 
-> What was chosen?
+Implementation patterns can suggest undocumented conventions. They do not prove those conventions were intended or should become policy. Compare patterns with user-stated decisions, existing docs, tests, and history; present uncertain interpretations as questions rather than project truths.
 
-but also:
-
-> What kinds of decisions feel native to this project?
-
-This matters increasingly as implementation becomes autonomous.
-
-The goal is not to specify every future decision.
-
-It is to preserve enough project identity that unfamiliar decisions can still be made coherently.
+Shaping can protect a distinctive identity without independently deciding what the project ought to feel like. Exploratory criticism and new creative direction belong to a task that explicitly asks for them.
 
 ---
 
@@ -655,39 +632,19 @@ This lets shaping remain available without becoming ambient churn.
 
 # When Working With the User
 
-**Inspect before asking when there is something to inspect.**
+**Inspect before asking when there is something to inspect.** Recover repository facts, established direction, and current constraints from the available evidence.
 
-Recover ordinary repository facts from the repository.
+Ask when an actual decision is blocked by missing intent or competing authoritative claims, such as:
 
-Questions are most valuable for things the project cannot reliably tell you:
+- two specifications describing incompatible commitments
+- code diverging from an established design without a clear reason
+- uncertainty over whether an unusual practice is deliberate
+- multiple plausible canonical homes for important knowledge
+- a proposed change that would alter user-visible or compatibility semantics
 
-- intent
-- taste
-- priorities
-- tradeoffs
-- ambiguity
-- non-goals
-- whether an observed divergence was deliberate
+Explain the evidence and tradeoff in project terms; ask the smallest question that resolves the ambiguity. Do not turn shaping into a fixed interview or manufacture questions to make the process feel thorough.
 
-If the reason for the shaping pass is already stated, use it.
-
-If the project is empty or the trigger is genuinely unclear, one useful opening question may be:
-
-> What made you want to shape this project now?
-
-Do not turn shaping into a fixed interview.
-
-Follow useful threads.
-
-When an example seems important, ask what makes it feel right.
-
-When something feels wrong to the user, investigate what broader principle that reaction exposes.
-
-One particularly useful question is:
-
-> What could be technically correct here and still feel wrong for this project?
-
-Hunt for **latent taste**, not merely requirements.
+If the task asks for new design judgment, respond to that request while distinguishing it from evidence-led shaping. Otherwise, leave open product decisions open.
 
 ---
 
@@ -744,57 +701,3 @@ Most importantly:
 Leave useful knowledge in the project or clearly surface what still requires human direction.
 
 ---
-
-# Voices from the Field
-
-These are distilled perspectives commonly expressed by people building, maintaining, and increasingly delegating software work.
-
-They are not laws, and they do not necessarily agree.
-
-Treat them as experienced voices in the room.
-
-> “A repository becomes easier to trust when you know where the current truth lives.”
->
-> — Experienced maintainers
-
-> “Give the worker a map, not the entire library every time it walks through the door.”
->
-> — Developers working with large agentic repositories
-
-> “The first patterns you establish matter disproportionately. Agents tend to reproduce the shape they inherit.”
->
-> — Agent-heavy developers
-
-> “If a convention genuinely matters, making it deterministic is often kinder than asking every future worker to remember it.”
->
-> — Tooling-minded developers
-
-> “Good documentation is a handoff between stages of thinking, not only a record of what happened.”
->
-> — Developers using agents across research, design, and implementation
-
-> “The best autonomous work has good boundaries and some way for the worker to discover whether it succeeded.”
->
-> — Experienced developers delegating to agents
-
-> “Moving quickly creates sediment. The useful question is which parts became geology.”
->
-> — Fast-moving developers
-
-> “Sometimes you should tell the model what you want and let it cook.”
->
-> — Vibe coders
-
-> “Not every imperfection needs a framework. A project should cost less to understand after the framework than before it.”
->
-> — Developers who have lived through too many methodologies
-
-> “A repository can work perfectly and still become much nicer to inherit.”
->
-> — Maintainers everywhere
-
-These perspectives can inform the work.
-
-**This project, however, needs its own direction.**
-
-Let its evidence, intent, people, and emerging identity have the final word.

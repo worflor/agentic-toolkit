@@ -1,22 +1,29 @@
 # Agentic Toolkit
 
-**Reusable skills, methods, and tools for working thoughtfully with AI agents.**
+**Reusable practices for making autonomous work easier to understand, direct, scrutinize, and maintain.**
 
-Agentic Toolkit is a home for portable, opinionated ways of understanding, building, examining, and maintaining projects. Each capability should solve a recognizable problem, explain when to use it, and respect the context of the project it enters.
+Agents can build a great deal in a short time. They can also leave a project with muddled context, decisions buried in conversations, confident but unverified explanations, and mountains of things nobody meant to maintain.
 
-Use what is relevant. Nothing requires adopting the rest of the collection, following a prescribed pipeline, or giving an agent more authority than the task calls for.
+Agentic Toolkit packages a few deliberately distinct ways of working with that reality. Each skill should be useful by itself, carry a recognizable point of view, and respect the project it enters. Use the ones that help. There's no required pipeline, shared runtime, or prescribed agent harness.
 
 ## Skills
 
-Skills are packaged using the [Agent Skills](https://agentskills.io/specification) format. Each has its own entry point and can be installed independently.
+The skills follow the [Agent Skills specification](https://agentskills.io/specification). Install any one independently, or use several together.
 
-| Skill | Use it for | Focus |
+| Skill | What it brings | Natural default |
 | --- | --- | --- |
-| **[Superfan](skills/superfan/SKILL.md)** | A deeply opinionated examination of a repository, feature, workflow, experience, or design trajectory. | Reconstruct intent and history, inspect how parts interact, and find cohesion gaps, awkwardness, and overlooked potential. Read-only by default. |
-| **[Project Startup](skills/project-startup/SKILL.md)** | Starting, adopting, or reorganizing a project so its important knowledge is easy to find. | Establish predictable information architecture without imposing a rigid template. |
-| **[Project Shaping](skills/project-shaping/SKILL.md)** | Reconciling what a project has become with its documentation, conventions, and accumulated decisions. | Preserve project identity while resolving outdated context, hidden assumptions, and emerging structure. |
+| **[Superfan](skills/superfan/SKILL.md)** | Obsessive, opinionated, evidence-grounded attention to the seams, identity, experience, and latent potential of a subject. | Investigate deeply and deliver a substantial critique; also enriches research, design, or other work without replacing its goal. |
+| **[Project Startup](skills/project-startup/SKILL.md)** | Predictable, context-sensitive homes for a project's durable knowledge. | Establish or improve an information architecture without forcing a template. |
+| **[Project Shaping](skills/project-shaping/SKILL.md)** | Evidence-led stewardship as implementation, decisions, and project knowledge evolve. | Reconcile what the repository says with what is known, preserving established intent rather than inventing new taste. |
+| **[Anti-Slop](skills/anti-slop/SKILL.md)** | Convention-led cleanup of accumulated agentic residue: chat-shaped docs, redundant comments, duplicated explanations, and needless maintenance noise. | Inspect, make the hygiene changes the user authorized, preserve meaningful exceptions, and verify the result. |
 
-Skills are **independent practices, not stages in a required workflow**. Their boundaries matter more than their order.
+### Complete practices, additive perspectives
+
+An **executable practice** supplies a complete way to approach a recognizable job. "Executable" describes a method an agent can carry out; it does not imply a bundled command-line program. Startup and Shaping are principally practices, and Anti-Slop is a self-contained cleanup practice.
+
+An **additive perspective** changes *how* another task is approached without taking over its purpose. Superfan naturally plays this role: give a research task Superfan's curiosity and sharp taste, and the result is more revealing research—not an unrelated critique attached at the end. Anti-Slop's discipline can likewise accompany implementation without triggering a surprise whole-repository purge.
+
+These are **descriptions of what skills do, not modes, exclusive types, or extra configuration**. Skills have sensible standalone defaults. When combined, they keep their character while adapting to the user's subject, deliverable, and permissions. No skill silently requires another.
 
 ## Installation
 
@@ -24,9 +31,10 @@ Install a selected skill with the [skills CLI](https://github.com/vercel-labs/sk
 
 ```bash
 npx skills add worflor/agentic-toolkit --skill superfan
+npx skills add worflor/agentic-toolkit --skill anti-slop
 ```
 
-Or install every skill available in the repository:
+Or install all currently available skills:
 
 ```bash
 npx skills add worflor/agentic-toolkit --all
@@ -38,58 +46,66 @@ For example, to install Superfan globally for Claude Code:
 npx skills add worflor/agentic-toolkit --skill superfan -g -a claude-code -y
 ```
 
-If this repository is private, access requires GitHub authentication with permission to read it. You can also clone it using your existing Git credentials and run `npx skills add . --skill superfan` from the checkout.
+While the repository is private, installation requires GitHub authentication with read access. You can also clone it using existing credentials and run `npx skills add . --skill superfan` from the checkout.
 
-Manual installation works too: copy the complete `skills/<name>/` directory into a location supported by your agent, such as `.claude/skills/` or `.agents/skills/`. Include bundled references and other resources, not just `SKILL.md`, when a skill depends on them.
+Manual installation works: copy the complete `skills/<name>/` directory to a supported skills location such as `.agents/skills/` or `.claude/skills/`. Include its references and any supporting resources.
 
-## Usage
+## Give a skill a job
 
-Invoke a skill with a clear subject and scope. For example:
+A name, a subject, and a clear request are usually enough. The skill handles its own method; the task determines scope and authority.
 
-> Use **superfan** to investigate this repository's core experience. Trace its history, inspect the actual implementation, and be painfully specific about design friction. Read-only.
+> **Superfan** this mod. Follow the actual code and design history, challenge the player experience, and don't edit anything.
 
-> Use **superfan** on this feature. Follow its dependencies only where they materially shape the user experience, and distinguish design intentions from observable behavior.
+> Deep-research this design space **with Superfan**. Keep the research deliverable, but obsess over hidden tensions and underexplored opportunities.
 
-> Use **project-startup** to make the repository's context and responsibilities easy for future workers to navigate.
+> Use **Project Startup** to give this new repository dependable places for technical knowledge, design intent, and current work. Respect what already exists.
 
-> Use **project-shaping** to reconcile what the codebase has learned with its documentation and current direction. Don't edit code.
+> Use **Project Shaping** after our latest development sprint. Trace what the implementation taught us and reconcile stale documentation without inventing new product direction.
 
-A skill supplies a method, **not blanket permission to change things**. The task defines the scope and the user authorizes any changes.
+> Use **Anti-Slop** on this codebase. Clean up chat-shaped docs, redundant comments, and duplicated instructions. Preserve technical reasoning and intentional personality. Check your changes.
 
-## Philosophy
+The defaults are complete, but **default behavior is not default authority**. A request to review isn't permission to edit. A cleanup request doesn't grant permission to redesign the product. Combining skills never expands permissions.
+
+## What holds the collection together
 
 **Predictability at the center; emergence around it.**
 
-Good agentic work needs trustworthy context, clear boundaries, and room for a project's own character to survive. The recurring ideas behind this toolkit are:
+- **Understand before intervening.** Read enough of the actual artifact, code, history, and evidence to know what the work means.
+- **Separate truth from intent.** A specification, an implementation, a passing test, and a predicted experience answer different questions.
+- **Keep subject-specific authority local.** Reusable methodology belongs here. A project's design decisions, conventions, and taste belong to that project.
+- **Protect useful weirdness.** Theatrical instructions, personality, humor, and deliberate constraints can carry meaning. Generic tidiness is not the goal.
+- **Leave less process than value.** Prefer canonical information, proportionate edits, and enforceable checks over another layer of documentation.
 
-- **Understand before intervening.** Read the code, documents, history, and behavior relevant to the question.
-- **Distinguish evidence from interpretation.** A specification, an implementation, a passing test, and a lived experience are not interchangeable.
-- **Protect useful weirdness.** Avoid sanding off deliberate design choices merely because they are unconventional.
-- **Prefer proportionate methods.** A valuable skill should help with the task, not create another maintenance project.
-- **Keep context local.** Project-specific truths belong with their projects; reusable methodology belongs here.
+These principles unite the collection; they don't make the skills interchangeable.
 
-These are guiding principles, not a required checklist or a claim that every future tool must behave identically.
-
-## Repository conventions
+## Repository layout
 
 ```text
 skills/
   <skill-name>/
-    SKILL.md             # discoverable entry point
-    references/          # deeper source material, when needed
-    scripts/             # optional supporting utilities
-README.md                # catalogue and usage
-AGENTS.md                # contributor/agent guidance
+    SKILL.md             # discoverable method and default behavior
+    references/          # deeper guidance when useful
+    scripts/             # optional utilities
+README.md                # catalogue and examples
+AGENTS.md                # contributor and agent guidance
+scripts/validate.py      # dependency-free packaging/link checks
 ```
 
-Individual entries can be self-contained or include additional reference material, examples, and utilities. Keep dependencies explicit and avoid loading unrelated skills just to use one.
+Every entry can stand alone. The canonical, long-form [Project Startup](skills/project-startup/references/method.md) and [Project Shaping](skills/project-shaping/references/method.md) methods remain available, with their former root links preserved at [Agentic Project Startup.md](Agentic%20Project%20Startup.md) and [Project Shaping.md](Project%20Shaping.md).
 
-The full Project Startup and Project Shaping methods live in their respective `references/method.md` files. The [former Startup path](Agentic%20Project%20Startup.md) and [former Shaping path](Project%20Shaping.md) remain available for existing links.
+## Contributing and verification
 
-## Contributing
+Add a skill when it solves a recognizable, reusable problem and has an intelligible default. Give it a clear invocation boundary, honest limitations, and enough personality to do its job. Avoid redundant versions of shared facts or obligatory handoffs to other skills.
 
-A new entry should provide a distinct, reusable capability with a clear purpose, invocation boundary, and honest limitations. Preserve each method's individual voice and substance rather than standardizing every skill into the same personality.
+To check skill metadata and local Markdown links:
 
-Add supporting files only when they improve understanding or execution. Keep canonical knowledge in one place, update the catalogue when capabilities change, and document any required tooling or cross-skill dependencies.
+```bash
+python3 scripts/validate.py
+python3 -m unittest discover -s tests -v
+```
 
-See [AGENTS.md](AGENTS.md) for practical repository guidance.
+See [AGENTS.md](AGENTS.md) for repository-specific contribution guidance. These structural checks do **not** measure the quality of an agent's reasoning; evaluate real task behaviour separately.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
