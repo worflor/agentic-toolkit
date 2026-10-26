@@ -101,6 +101,7 @@ To check skill metadata and local Markdown links:
 
 ```bash
 python3 scripts/validate.py
+python3 -m unittest discover -s tests -v
 ```
 
 See [AGENTS.md](AGENTS.md) for repository-specific contribution guidance. These structural checks do **not** measure the quality of an agent's reasoning; evaluate real task behaviour separately.
