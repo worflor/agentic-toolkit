@@ -8,9 +8,10 @@ After changing a skill, supporting file, or repository navigation, run:
 
 ```bash
 python3 scripts/validate.py
+python3 -m unittest discover -s tests -v
 ```
 
-That command checks basic skill metadata and local Markdown links. It does not establish whether a skill is effective in practice; use realistic prompts and representative artifacts for behavioral evaluation.
+These checks cover basic skill metadata, local Markdown links, and validator regressions. They do not establish whether a skill is effective in practice; use realistic prompts and representative artifacts for behavioral evaluation.
 
 ## Canonical homes
 
