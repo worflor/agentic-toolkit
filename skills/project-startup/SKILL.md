@@ -14,7 +14,7 @@ description: >-
 
 Use this skill to establish or improve a project's information architecture: the canonical homes, landmarks, and navigation that make future independent work more reliable. The goal is not standardized documents for their own sake. It is a repository that humans and agents can understand, inherit, and work inside.
 
-**Read [the complete Startup method](references/method.md) before making structural recommendations or changes.** It is the canonical methodology and is deliberately more detailed than this entry point. Do not guess its contents from the short description.
+Use the [canonical Startup method](references/method.md) for the relevant structural guidance. Read the complete method when establishing a project-wide architecture; for a focused organizational correction, read the pertinent sections. Do not guess reference content from the entry point.
 
 ## Start from the project that exists
 
