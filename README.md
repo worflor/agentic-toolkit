@@ -39,19 +39,19 @@ If you're accessing this repository privately, you'll need GitHub read access. Y
 
 ## Give a skill a job
 
-Use ordinary language. Name a skill, say what you're working on, and set any important boundaries:
+Once installed, talk to your agent like you normally would. You don't need to explain the skill back to it:
 
-> **Superfan** this library's API before we stabilise it. Read the implementation and examples, challenge the design, and don't edit anything.
+> I'm pretty sure this API makes sense only to me. **Superfan** it before I call it stable.
 
-> Use **Project Startup** to organise this new application's documentation and contributor guidance. Work with the structure that's already here.
+> This started as a weekend project, and now people actually want to contribute. Can **Project Startup** help me sort out the repo?
 
-> Use **Project Shaping** after our latest development sprint. Check where implementation and documentation disagree, correct what the evidence supports, and flag unresolved decisions.
+> We've rebuilt the backend twice, and half the docs still describe the old version. Give it a **Project Shaping** pass.
 
-> Apply **Anti-Slop** to the docs and comments touched by this change. Remove repetition, preserve the important technical explanations, and verify the edits.
+> These docs read like five agents took turns summarising each other. Please **Anti-Slop** them.
 
-You can also combine a skill with a different deliverable:
+You can also bring a skill into another task:
 
-> Research these architecture options **with Superfan**. Keep it a research report, but examine the hidden trade-offs and less obvious consequences.
+> We're torn between building our own plugin system and adopting an existing one. Research the options **with Superfan**. I want to know what we'll regret later.
 
 The task sets the scope and permissions. A review isn't permission to edit. Cleanup isn't permission to redesign a product. Using more than one skill doesn't expand either.
 
