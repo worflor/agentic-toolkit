@@ -20,9 +20,8 @@ These checks cover basic skill metadata, local Markdown links, and validator reg
 - `skills/<name>/references/`: deeper methodology or supporting knowledge, loaded as the task requires.
 - `skills/<name>/scripts/`: utilities only when they materially support that skill.
 - `scripts/validate.py`: dependency-free structural checks for this repository.
-- `Agentic Project Startup.md` and `Project Shaping.md`: compatibility pointers for older links. The canonical methods live under their respective `skills/*/references/method.md` paths.
 
-Do not maintain rival copies of canonical material. Preserve compatibility paths and fix inbound links when organizing files.
+Do not maintain rival copies of canonical material. Update internal links when reorganizing files; retain legacy paths only when there's a concrete compatibility reason.
 
 ## Working principles
 
@@ -40,7 +39,7 @@ Do not maintain rival copies of canonical material. Preserve compatibility paths
 - Make sure the intended task and each skill's natural default remain legible without extra modes.
 - Validate new or modified Agent Skills: YAML frontmatter, directory-matching name, informative description, bundled dependencies, and working paths.
 - Review the diff for semantic drift, flattened voice, redundant explanation, and accidental behavior changes.
-- Check current Markdown links, README examples, old compatibility paths, and references.
+- Check current Markdown links, README examples, and skill references.
 - Report exactly which checks ran; distinguish structural validation from real agent-behavior testing.
 - Preserve the repository's private status until its owner chooses otherwise.
 
