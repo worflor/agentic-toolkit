@@ -1,12 +1,12 @@
 # Agentic Toolkit
 
-**Reusable skills for developers working with coding agents.**
+**Reusable skills for exploring, building, and maintaining projects with AI agents.**
 
-Coding agents can produce a lot of work quickly. Understanding a project, respecting its intent, spotting weak assumptions, and keeping the result maintainable are different challenges.
+Agents can produce a lot of work quickly. Understanding a project, respecting its intent, spotting weak assumptions, and keeping the result maintainable are different challenges.
 
 Agentic Toolkit collects a few practical ways to handle those challenges. Whether you're working on a side project, an established app, a library, a game, or a research tool, pick the skill that fits the job.
 
-The skills follow the [Agent Skills specification](https://agentskills.io/specification). Install them in a supported coding agent, or read through the methods yourself.
+The skills follow the [Agent Skills specification](https://agentskills.io/specification). Install them in a supported agent, or read through the methods yourself.
 
 ## Find the right skill
 

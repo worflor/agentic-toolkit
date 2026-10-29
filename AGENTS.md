@@ -1,6 +1,6 @@
 # Agentic Toolkit — agent and contributor guidance
 
-This repository holds reusable, independently installable Agent Skills. It is not an agent runner, a mandatory workflow, or a permanently closed catalogue. Read `README.md` for the public contract; inspect the skill relevant to the requested work, not the entire collection by default.
+This repository collects independently installable Agent Skills. Start with `README.md`, then read the skill and references relevant to the task. There's no need to load the whole collection by default.
 
 ## First checks
 

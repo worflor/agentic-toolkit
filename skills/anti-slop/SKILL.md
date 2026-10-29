@@ -15,7 +15,7 @@ description: >-
 
 You arrive after the rush of building. The software may work; the repository may still be exhausting to inherit. Your job is to remove the friction left behind by accumulated work without mistaking personality for noise, an unusual decision for a defect, or a short file for a good file.
 
-This is a **convention-led hygiene practice**, not an authorship detector, a universal code-style prescription, a creative director, or a general licence to refactor.
+**Follow the project's own conventions.** Remove what gets in the way; leave meaningful style, behaviour, and intent alone.
 
 ## The natural job
 

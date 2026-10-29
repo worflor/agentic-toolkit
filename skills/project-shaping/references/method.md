@@ -20,7 +20,7 @@ A successful shaping pass should leave a project feeling **more like itself, onl
 
 ---
 
-# The Shaping Posture
+## The Shaping Posture
 
 Enter the project like a thoughtful maintainer joining an existing body of work.
 
@@ -28,7 +28,7 @@ The repository has already learned things.
 
 Your job is to understand those things, help important knowledge find the right home, reduce avoidable ambiguity, and preserve what gives the project its identity.
 
-This is not an AI coding workflow. It describes **sensible stewardship under velocity and autonomous labor**: enter like a thoughtful maintainer, understand what the project has learned, and help its representation catch up without flattening it.
+Think of it as **stewardship during rapid change**: understand what the project has learned, then bring its documentation and structure up to date without flattening what makes it distinct.
 
 A useful shaping posture is:
 
@@ -68,11 +68,11 @@ The next competent worker should benefit from what was learned without requiring
 
 ---
 
-# Shaping Across a Project's Life
+## Shaping Across a Project's Life
 
 The same philosophy applies throughout a project's life, but the emphasis changes.
 
-## Early Projects
+### Early Projects
 
 When little implementation exists, shaping helps make **existing decisions and open questions** legible. Sparse evidence is not permission to devise the project's creative direction.
 
@@ -92,7 +92,7 @@ Shaping records and reconciles the project's direction. It does not audition a n
 
 ---
 
-## Active Projects
+### Active Projects
 
 During rapid development, shaping becomes partly archaeological.
 
@@ -119,7 +119,7 @@ Shaping periodically lets the repository catch up with what the work has discove
 
 ---
 
-## Release and Maintenance
+### Release and Maintenance
 
 As a project matures, shaping increasingly protects **legibility and durability**.
 
@@ -139,7 +139,7 @@ A mature project should be able to stand on its own feet without constantly summ
 
 ---
 
-## Adopted or Established Projects
+### Adopted or Established Projects
 
 When entering a repository you did not create, learn its existing organizational grammar first.
 
@@ -151,7 +151,7 @@ Sometimes the best shaping pass is small.
 
 ---
 
-# Read the Repository as Evidence
+## Read the Repository as Evidence
 
 A repository contains different kinds of evidence:
 
@@ -194,11 +194,11 @@ Treat the repository as evidence to understand, not an argument where one artifa
 
 ---
 
-# Understand What Kind of Knowledge You Are Looking At
+## Understand What Kind of Knowledge You Are Looking At
 
 A useful shaping pass distinguishes several kinds of project knowledge.
 
-## Current Truth
+### Current Truth
 
 What is factually true of the project now.
 
@@ -208,7 +208,7 @@ Examples:
 - these tests run in CI
 - Linux builds currently succeed
 
-## Intent
+### Intent
 
 What the project is trying to preserve or become.
 
@@ -218,7 +218,7 @@ Examples:
 - interactions should feel instantaneous
 - compatibility matters more than framework purity
 
-## Working Context
+### Working Context
 
 Information useful to active or exploratory work.
 
@@ -229,7 +229,7 @@ Examples:
 
 This often belongs in `docs/briefs/`.
 
-## Archaeology
+### Archaeology
 
 Historical information that is no longer current but still explains something important about the project.
 
@@ -237,7 +237,7 @@ An old comment explaining an ugly compatibility workaround may prevent a future 
 
 Useful history deserves to remain understandable as history.
 
-## Residue
+### Residue
 
 Information that no longer helps someone correctly understand or maintain the project.
 
@@ -251,7 +251,7 @@ Good shaping distinguishes archaeology from residue rather than treating age its
 
 ---
 
-# Trajectory Cleanup
+## Trajectory Cleanup
 
 Trajectory Cleanup reconciles the project's accumulated representation with what the project has actually become.
 
@@ -283,7 +283,7 @@ Shaping makes that distinction visible.
 
 ---
 
-# Look for Emerging Structure
+## Look for Emerging Structure
 
 A shaping pass should look for discoveries as actively as it looks for mess.
 
@@ -308,7 +308,7 @@ The question is whether the project has learned something durable enough to make
 
 ---
 
-# Preserve Established Project Taste
+## Preserve Established Project Taste
 
 The project's taste is its established intent, constraints, and characteristic choices—not the shaper's preferences. Protect it, including purposeful irregularities that a generic cleanup might erase.
 
@@ -328,7 +328,7 @@ Shaping can protect a distinctive identity without independently deciding what t
 
 ---
 
-# Use the Existing Documentation Structure
+## Use the Existing Documentation Structure
 
 Use the project's established documentation structure; where this framework established it, see *Agentic Project Startup*.
 
@@ -352,7 +352,7 @@ Consistency is valuable, especially across projects that share an ecosystem or m
 
 Project-specific documentation spaces are welcome when they make a meaningful body of knowledge easier to discover. Shape them around the project rather than trying to fit every kind of information into `reference/`.
 
-## Technical Design
+### Technical Design
 
 `TDD.md` or its equivalent is the durable home for the project's technical shape.
 
@@ -366,7 +366,7 @@ Depending on the project, another name may fit better:
 
 What matters is that deeper technical truth and technical intent have a predictable canonical home.
 
-## Product, Game, Research, or Experience Design
+### Product, Game, Research, or Experience Design
 
 `GDD.md`, `PDD.md`, or their equivalent captures the non-technical design domain that matters to the project.
 
@@ -381,7 +381,7 @@ This may instead be:
 
 Choose the smallest set of core documents that cleanly represents the project.
 
-## Project Status
+### Project Status
 
 `STATUS.md` or its equivalent is a lightweight current-state / known-work surface.
 
@@ -391,7 +391,7 @@ It reflects known work, not the complete universe of possible work. Work may beg
 
 Its role is orientation and memory, not process enforcement.
 
-## Briefs / Artifacts
+### Briefs / Artifacts
 
 `docs/briefs/` is working memory. “Brief” and “artifact” refer to the same general class here: bounded, usually one-off documents worth preserving outside the current conversation or work session.
 
@@ -399,7 +399,7 @@ Implementation plans, investigations, research dumps, design explorations, revie
 
 It is allowed to become somewhat messy. That is part of its job.
 
-## Reference
+### Reference
 
 `docs/reference/` holds durable supporting material that benefits from being independently addressable without becoming another primary design document.
 
@@ -409,21 +409,21 @@ Documentation earns its place by improving understanding.
 
 ---
 
-# Let Knowledge Earn Permanence
+## Let Knowledge Earn Permanence
 
 Information does not need to become permanent merely because it was discovered.
 
 A healthy project lets repeated usefulness reveal where knowledge belongs.
 
-## A finding happens once
+### A finding happens once
 
 Keep it local, report it, or place it in a brief.
 
-## It becomes durable understanding
+### It becomes durable understanding
 
 Promote it into the appropriate core document or reference material.
 
-## It becomes a stable invariant
+### It becomes a stable invariant
 
 Where practical, encode it mechanically through:
 
@@ -435,7 +435,7 @@ Where practical, encode it mechanically through:
 - architectural checks
 - build tooling
 
-## A procedure becomes repeatedly useful
+### A procedure becomes repeatedly useful
 
 Make it reproducible through:
 
@@ -445,7 +445,7 @@ Make it reproducible through:
 - tool
 - reusable agent workflow
 
-## Something stops being true
+### Something stops being true
 
 Let its representation evolve too.
 
@@ -455,7 +455,7 @@ The project should accumulate **useful structure**, not layers explaining why pr
 
 ---
 
-# Prefer Executable Knowledge Where It Fits
+## Prefer Executable Knowledge Where It Fits
 
 Some conventions are better expressed through the system than through reminders.
 
@@ -491,7 +491,7 @@ Sometimes the project simply needed one correction rather than a new permanent r
 
 ---
 
-# Agent Instructions Are Part of the Environment
+## Agent Instructions Are Part of the Environment
 
 Files such as:
 
@@ -520,7 +520,7 @@ Because agents may follow instructions confidently, trustworthy instructions are
 
 ---
 
-# Prefer Freshness and Trust
+## Prefer Freshness and Trust
 
 A repository benefits when workers can trust what presents itself as current.
 
@@ -542,7 +542,7 @@ Keep authority aligned with relevance.
 
 ---
 
-# Shape With Proportion
+## Shape With Proportion
 
 Shaping should improve the project without becoming the project.
 
@@ -565,11 +565,11 @@ Symmetry by itself is not a feature.
 
 ---
 
-# Findings During a Shaping Pass
+## Findings During a Shaping Pass
 
 A useful shaping pass can organize findings into three broad categories.
 
-## Safe Normalization
+### Safe Normalization
 
 Low-risk improvements whose intended outcome is clear.
 
@@ -583,7 +583,7 @@ Examples:
 
 When shaping work is authorized, these are good candidates for direct improvement.
 
-## Proposed Reconciliation
+### Proposed Reconciliation
 
 Places where choosing an interpretation requires project intent.
 
@@ -596,7 +596,7 @@ Examples:
 
 Present the evidence clearly and let the relevant owner resolve the uncertainty.
 
-## Interesting Emergence
+### Interesting Emergence
 
 Patterns that may represent newly discovered project structure.
 
@@ -614,7 +614,7 @@ The best shaping passes discover useful things the project did not yet know how 
 
 ---
 
-# Scope and Authority
+## Scope and Authority
 
 Risk and authority are different questions.
 
@@ -630,7 +630,7 @@ This lets shaping remain available without becoming ambient churn.
 
 ---
 
-# When Working With the User
+## When Working With the User
 
 **Inspect before asking when there is something to inspect.** Recover repository facts, established direction, and current constraints from the available evidence.
 
@@ -648,7 +648,7 @@ If the task asks for new design judgment, respond to that request while distingu
 
 ---
 
-# Context Density
+## Context Density
 
 More information is not automatically better information.
 
@@ -674,7 +674,7 @@ Prefer maps toward deeper context over giant mandatory context bundles.
 
 ---
 
-# Completion Standard
+## Completion Standard
 
 A shaping pass does not need to make the repository perfect.
 

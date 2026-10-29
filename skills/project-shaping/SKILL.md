@@ -2,7 +2,7 @@
 name: project-shaping
 description: >-
   Reconcile a project's documentation, structure, intent, implementation, and
-  accumulated history after development. Use for project shaping, stewardship,
+  accumulated history as a project evolves. Use for project shaping, stewardship,
   trajectory cleanup, stale context, lost decisions, archaeology, and emerging
   architecture. Preserve established project intent and conventions without
   inventing project-specific taste. Not routine code review or refactoring.

@@ -17,11 +17,11 @@ A capable autonomous agent dropped into the project should be able to find the *
 
 At the same time, a human browsing the repository directly should find an organized, recognizable project rather than an agent-specific knowledge dump.
 
-This is not an AI coding workflow. It is **repository legibility under autonomous labor**. If agents disappeared tomorrow, it would still describe a clean, pleasantly organized engineering style.
+The goal is **repository legibility under autonomous work**: a project that remains pleasant to navigate and inherit, whether the next worker is human or an agent.
 
 ---
 
-# Structural Philosophy
+## Structural Philosophy
 
 Use **strong conventions for the core structure** and allow personality inside it.
 
@@ -45,9 +45,9 @@ It should not force every project to describe itself using identical categories.
 
 ---
 
-# Root
+## Root
 
-## `README.md`
+### `README.md`
 
 The user-facing face of the project.
 
@@ -67,7 +67,7 @@ It may summarize deeper design or technical information, but it does not need to
 
 ---
 
-## `AGENTS.md`
+### `AGENTS.md`
 
 The onboarding layer for:
 
@@ -103,7 +103,7 @@ It should make deeper information easy to find rather than attempting to reprodu
 
 ---
 
-# `docs/`
+## `docs/`
 
 `docs/` contains deeper internal project knowledge.
 
@@ -138,7 +138,7 @@ These are natural extensions of the structure, not exceptions to it.
 
 ---
 
-# Core Project Documents
+## Core Project Documents
 
 Most projects benefit from a **small number of primary documents** that partition durable project knowledge into understandable domains.
 
@@ -152,7 +152,7 @@ A useful core document should answer a question that is important enough to dese
 
 ---
 
-## Technical Design — `TDD.md` / equivalent
+### Technical Design — `TDD.md` / equivalent
 
 A technical-design document is the durable home for the project's **technical model of itself**.
 
@@ -194,7 +194,7 @@ Choices such as native versus web, Linux support, architectural primitives, comp
 
 ---
 
-## Experience / Domain Design — `GDD.md`, `PDD.md`, or equivalent
+### Experience / Domain Design — `GDD.md`, `PDD.md`, or equivalent
 
 Many projects need a second durable document concerned less with *how the system is built* and more with **what the system is trying to be** in its relevant domain.
 
@@ -234,7 +234,7 @@ Do not force unrelated projects into GDD/PDD semantics merely because those name
 
 ---
 
-## Research Design — possible equivalent
+### Research Design — possible equivalent
 
 When research itself is a major project domain, its core design knowledge may deserve a dedicated home.
 
@@ -255,7 +255,7 @@ The important distinction is that **research reasoning itself is part of the pro
 
 ---
 
-## Agent Design — possible equivalent
+### Agent Design — possible equivalent
 
 When autonomous or intelligent agents are part of the thing being built, agent behavior may deserve its own core design home.
 
@@ -278,7 +278,7 @@ Use one when agent behavior is itself part of the project's design.
 
 ---
 
-# Choosing Core Documents
+## Choosing Core Documents
 
 Choose the smallest set of documents that gives the project's important durable knowledge clear homes.
 
@@ -320,7 +320,7 @@ Core documents are **categories of durable project understanding**, not forms th
 
 ---
 
-# Taste Belongs With Its Domain
+## Taste Belongs With Its Domain
 
 Do not create a separate taste document by default.
 
@@ -344,7 +344,7 @@ Do not reduce durable project documents to dry specification sheets if important
 
 ---
 
-# Workflows That Span Domains
+## Workflows That Span Domains
 
 Place information according to **what part of the project it helps someone understand**.
 
@@ -372,7 +372,7 @@ Cross-reference when that improves understanding.
 
 ---
 
-# Current-State Board — `STATUS.md` / equivalent
+## Current-State Board — `STATUS.md` / equivalent
 
 Some projects benefit from an obvious place to glance at **known work, loose ends, and things worth keeping visible**.
 
@@ -421,7 +421,7 @@ For new projects where this role is useful, `docs/STATUS.md` is a predictable de
 
 ---
 
-# `docs/briefs/` — Briefs / Artifacts / Working Memory
+## `docs/briefs/` — Briefs / Artifacts / Working Memory
 
 `docs/briefs/` is the project's working-memory space.
 
@@ -457,7 +457,7 @@ If something inside one becomes durable project understanding, that knowledge ca
 
 ---
 
-# `docs/reference/` — Durable Supporting Knowledge
+## `docs/reference/` — Durable Supporting Knowledge
 
 `docs/reference/` contains useful supporting material that benefits from being independently addressable without becoming one of the project's primary design documents.
 
@@ -486,7 +486,7 @@ For an established project with another coherent reference convention, preserve 
 
 ---
 
-# Canonicality
+## Canonicality
 
 Important information should normally have one clear authoritative context.
 
@@ -512,7 +512,7 @@ Prefer references and concise summaries over independently maintained competing 
 
 ---
 
-# Documentation vs Reality
+## Documentation vs Reality
 
 Source code and documentation can disagree.
 
@@ -546,7 +546,7 @@ Use both to understand the project rather than automatically forcing one to conf
 
 ---
 
-# Editing Core Documentation
+## Editing Core Documentation
 
 Treat core documents as relatively stable project knowledge.
 
@@ -577,7 +577,7 @@ The important goal is that changes to durable project understanding should be **
 
 ---
 
-# Information Placement
+## Information Placement
 
 When new information appears, first ask:
 
@@ -607,7 +607,7 @@ Do not create another Markdown file merely because information exists.
 
 ---
 
-# General Standard
+## General Standard
 
 Prefer:
 
@@ -621,4 +621,4 @@ The structure should support work rather than requiring work to perform the stru
 
 The repository should remain coherent if every AI tool disappeared tomorrow.
 
-It should also be structured well enough that, if the human disappeared for a day and a competent autonomous worker was given a bounded task, that worker could enter the repository, understand the environment, find the right context, respect the project's taste, notice uncertainty, and do respectable work without requiring constant supervision.
+A competent worker should be able to pick up a bounded task tomorrow, find trustworthy context, respect the project's taste, and continue without reconstructing yesterday's conversation.
