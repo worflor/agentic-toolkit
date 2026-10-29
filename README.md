@@ -10,14 +10,14 @@ The skills follow the [Agent Skills specification](https://agentskills.io/specif
 
 ## Find the right skill
 
-| Skill | When to use it | What it does |
+| Skill | When it helps | What it does |
 | --- | --- | --- |
-| **[Superfan](skills/superfan/SKILL.md)** | You want more than a surface-level review of a feature, API, design, or research question. | Gets unreasonably invested in the details and tells you what works, what doesn't, and why. |
-| **[Project Startup](skills/project-startup/SKILL.md)** | You're starting a repository or inheriting one that's hard to navigate. | Organises project knowledge so the next person (or agent) can find what matters. |
-| **[Project Shaping](skills/project-shaping/SKILL.md)** | Code, documentation, and earlier decisions have drifted apart as a project evolves. | Figures out what changed, what the project has learned, and what needs to catch up. |
-| **[Anti-Slop](skills/anti-slop/SKILL.md)** | Docs, comments, or agent instructions have become repetitive, outdated, or difficult to maintain. | Clears out stale clutter while keeping the explanations and quirks worth having. |
+| **[Superfan](skills/superfan/SKILL.md)** | You want someone to look closely at an idea, experience, or project and challenge what you might have stopped noticing. | Gets unreasonably invested in the details, follows the interesting connections, and gives you a considered opinion. |
+| **[Project Startup](skills/project-startup/SKILL.md)** | You're starting something new, taking over an existing project, or losing track of where its knowledge lives. | Gives important context and decisions sensible places to live, without making every project look the same. |
+| **[Project Shaping](skills/project-shaping/SKILL.md)** | The project has evolved, but its plans, assumptions, or documentation haven't quite caught up. | Works out what has changed, what the project has learned, and what needs to be brought up to date. |
+| **[Anti-Slop](skills/anti-slop/SKILL.md)** | Explanations, notes, or instructions are piling up and making the work harder to follow. | Clears away repetition and stale clutter while keeping useful reasoning and personality intact. |
 
-Use a skill on its own, or bring it into something you're already doing. Superfan can give research more bite; Anti-Slop can keep a coding sprint from leaving a mess.
+Use a skill on its own, or bring its perspective into another task. Superfan can make research more revealing; Anti-Slop can help keep a long stretch of work from leaving a mess.
 
 ## Get started
 
